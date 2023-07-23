@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@+id/homePageFragment">
+<!--    app:startDestination="@id/logInFragment"-->
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/logInFragment"-->
+<!--        android:name="com.example.restaurants.LogInFragment"-->
+<!--        android:label="fragment_login"-->
+<!--        tools:layout="@layout/fragment_login" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_logInFragment_to_registerFragment"-->
+<!--            app:destination="@id/registerFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_logInFragment_to_homePageFragment"-->
+<!--            app:destination="@id/homePageFragment" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/registerFragment"-->
+<!--        android:name="com.example.restaurants.RegisterFragment"-->
+<!--        android:label="fragment_register"-->
+<!--        tools:layout="@layout/fragment_register" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_registerFragment_to_homePageFragment"-->
+<!--            app:destination="@id/homePageFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_registerFragment_to_logInFragment"-->
+<!--            app:destination="@id/logInFragment" />-->
+<!--    </fragment>-->
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.restaurants.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_restaurantView"
+            app:destination="@id/restaurantView" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesPageFragment"
+        android:name="com.example.restaurants.FavoritesPageFragment"
+        android:label="fragment_favorites_page"
+        tools:layout="@layout/fragment_favorites_page" >
+        <action
+            android:id="@+id/action_favoritesPageFragment_to_restaurantView"
+            app:destination="@id/restaurantView" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilePageFragment"
+        android:name="com.example.restaurants.ProfilePageFragment"
+        android:label="fragment_profile_page"
+        tools:layout="@layout/fragment_profile_page" >
+<!--        <action-->
+<!--            android:id="@+id/action_profilePageFragment_to_logInFragment"-->
+<!--            app:destination="@id/logInFragment" />-->
+        <action
+            android:id="@+id/action_profilePageFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantView"
+        android:name="com.example.restaurants.RestaurantView"
+        android:label="fragment_restaurant_view"
+        tools:layout="@layout/fragment_restaurant_view" >
+        <action
+            android:id="@+id/action_restaurantView_to_favoritesPageFragment"
+            app:destination="@id/favoritesPageFragment" />
+        <action
+            android:id="@+id/action_restaurantView_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+        <argument
+            android:name="restName"
+            app:argType="string"
+            android:defaultValue="Restaurant name" />
+        <argument
+            android:name="restDescription"
+            app:argType="string"
+            android:defaultValue="Description" />
+        <argument
+            android:name="restAdress"
+            app:argType="string"
+            android:defaultValue="Adress" />
+        <argument
+            android:name="restImage"
+            app:argType="string" />
+        <argument
+            android:name="restScore"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.restaurants.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>
